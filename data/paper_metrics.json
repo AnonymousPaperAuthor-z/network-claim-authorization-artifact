@@ -1,0 +1,72 @@
+{
+  "schema_version": "vericlaim-paper-metrics-v1",
+  "scope": "Aggregate integer counts used by the submitted manuscript. No measurement endpoint identifiers or row-level model outputs are included.",
+  "vericlaim_sec": {
+    "records": 8600,
+    "attribute_cells": 25800,
+    "tracks": {
+      "candidate_verification": {"records": 2000, "cells": 6000},
+      "broad_record_complete": {"records": 6000, "cells": 18000},
+      "evidence_rich": {"records": 600, "cells": 1800}
+    }
+  },
+  "candidate_verification": [
+    {"id": "unverified_qwen3_14b", "tp": 2673, "fp": 448, "tn": 0, "fn": 0, "reported_u95": 0.15427476811203927},
+    {"id": "vericlaim", "tp": 2290, "fp": 17, "tn": 431, "fn": 383, "reported_u95": 0.011032612458412479},
+    {"id": "gpt_5_4_direct_support", "tp": 1918, "fp": 107, "tn": 341, "fn": 755, "reported_u95": 0.06175756117593903},
+    {"id": "doubao_seed_2_1", "tp": 2051, "fp": 158, "tn": 290, "fn": 622, "reported_u95": 0.08119990726318269},
+    {"id": "minicheck", "tp": 2046, "fp": 302, "tn": 146, "fn": 627, "reported_u95": 0.14054143898050947},
+    {"id": "alignscore", "tp": 2056, "fp": 331, "tn": 117, "fn": 617, "reported_u95": 0.15084121255989386}
+  ],
+  "eev_transfer": [
+    {"id": "taskaware_gpt54_1pct", "budget": 0.01, "supported": 1329, "accepted": 90, "correct_accepted": 86, "false": 4, "correct_reductions": 3, "useful_resolved": 89, "reported_u95": 0.09882084611586947},
+    {"id": "target_conditioned_eev_1pct", "budget": 0.01, "supported": 1330, "accepted": 771, "correct_accepted": 770, "false": 1, "correct_reductions": 4, "useful_resolved": 774, "reported_u95": 0.0061379537169465315},
+    {"id": "taskaware_gpt54_5pct", "budget": 0.05, "supported": 1329, "accepted": 368, "correct_accepted": 361, "false": 7, "correct_reductions": 3, "useful_resolved": 364, "reported_u95": 0.03543050543053715},
+    {"id": "target_conditioned_eev_5pct", "budget": 0.05, "supported": 1330, "accepted": 1114, "correct_accepted": 1083, "false": 31, "correct_reductions": 4, "useful_resolved": 1087, "reported_u95": 0.037372925874976926}
+  ],
+  "terminal_outcomes": [
+    {"id": "broad", "records": 6000, "cells": 18000, "supported": 2085, "accepted": 1235, "correct_accepted": 1216, "false": 19, "reductions": 154, "correct_reductions": 152, "useful_resolved": 1368, "unsafe_candidates": 3614, "unsafe_suppressed": 3594, "reported_u95": 0.022493036855017093},
+    {"id": "evidence_rich", "records": 600, "cells": 1800, "supported": 1363, "accepted": 897, "correct_accepted": 870, "false": 27, "reductions": 4, "correct_reductions": 3, "useful_resolved": 873, "unsafe_candidates": 129, "unsafe_suppressed": 101, "reported_u95": 0.041272077204349424},
+    {"id": "record_complete_aggregate", "records": 6600, "cells": 19800, "supported": 3448, "accepted": 2132, "correct_accepted": 2086, "false": 46, "reductions": 158, "correct_reductions": 155, "useful_resolved": 2241, "unsafe_candidates": 3743, "unsafe_suppressed": 3695, "reported_u95": 0.02750398352845687}
+  ],
+  "component_ablation": [
+    {"id": "candidate_pass_through", "supported": 1363, "accepted": 1413, "correct_accepted": 1284, "false": 129, "correct_reductions": 0, "useful_resolved": 1284, "unsafe_candidates": 129, "unsafe_suppressed": 0, "reported_u95": 0.10489245406612499},
+    {"id": "role_aware_no_csda", "supported": 1363, "accepted": 765, "correct_accepted": 744, "false": 21, "correct_reductions": 3, "useful_resolved": 747, "unsafe_candidates": 129, "unsafe_suppressed": 107, "reported_u95": 0.03929067845776414},
+    {"id": "role_aware_with_csda", "supported": 1363, "accepted": 897, "correct_accepted": 870, "false": 27, "correct_reductions": 3, "useful_resolved": 873, "unsafe_candidates": 129, "unsafe_suppressed": 101, "reported_u95": 0.041272077204349424},
+    {"id": "target_conditioned_with_csda", "supported": 1363, "accepted": 1114, "correct_accepted": 1081, "false": 33, "correct_reductions": 3, "useful_resolved": 1084, "unsafe_candidates": 129, "unsafe_suppressed": 94, "reported_u95": 0.039411074344850076}
+  ],
+  "csda": {
+    "score_derived": true,
+    "auc_rows": [
+      {"id": "qwen_main", "claims": 2488, "evidence_state_auc": 0.6475601295097133, "with_csda_auc": 0.8326757631822387},
+      {"id": "llama_main", "claims": 2488, "evidence_state_auc": 0.5694865864939871, "with_csda_auc": 0.8389338575393155},
+      {"id": "qwen_stress", "claims": 1048, "evidence_state_auc": 0.5798398246222825, "with_csda_auc": 0.8422316594235228},
+      {"id": "llama_stress", "claims": 1048, "evidence_state_auc": 0.6437998138264179, "with_csda_auc": 0.8252612213647955}
+    ],
+    "natural_source_multiplicity": {"claims": 2488, "at_most_one": 1631, "exactly_two": 493, "three_or_more": 364, "firmware_claims": 646, "multisource_firmware": 186}
+  },
+  "robustness": [
+    {"id": "csda", "pairs": 300, "eligible_clean_pass": 191, "conditional_detected": 78, "attacks_rejected": 166, "clean_values_accepted": 191},
+    {"id": "conflict_contract", "pairs": 300, "eligible_clean_pass": 135, "conditional_detected": 114, "attacks_rejected": 278, "clean_values_accepted": 135},
+    {"id": "composed_gate", "pairs": 300, "eligible_clean_pass": 212, "conditional_detected": 212, "attacks_rejected": 300, "clean_values_accepted": 212}
+  ],
+  "composition": [
+    {"id": "nsfirmid_native", "supported": 1363, "emitted": 1327, "correct": 1129, "false": 198},
+    {"id": "nsfirmid_deep_unguarded", "supported": 1363, "emitted": 1455, "correct": 1197, "false": 258},
+    {"id": "nsfirmid_deep_authorized", "supported": 1363, "emitted": 1369, "correct": 1174, "false": 195, "reported_incorrect_additions_blocked": 0.8796}
+  ],
+  "cve": {
+    "controlled_evasion": {"source_endpoints": 71, "crafted_variants": 284, "successful_perturbations": 49, "intercepted": 45, "affected_endpoints": 15, "fully_protected_endpoints": 14, "association_instances": 593, "associations_preserved": 557, "endpoint_cve_pairs": 99, "robust_endpoint_cve_pairs": 91},
+    "reviewed_normal_task": {"records": 384, "oracle_links": 11120, "candidate_true_links": 4964, "candidate_false_links": 6, "protected_true_links": 4256, "protected_false_links": 0}
+  },
+  "pase": {
+    "serialization_fidelity": [
+      {"id": "reconstructed", "matched": 383, "eligible": 563},
+      {"id": "loss_aware", "matched": 413, "eligible": 563},
+      {"id": "complete", "matched": 416, "eligible": 563}
+    ],
+    "model_diverse_firmware": {"records": 171, "fixed_head_tail_correct": 51, "pase_correct": 75},
+    "static_rich_firmware": {"observed_records": 330, "fixed_head_tail_strict": 271, "pase_strict": 312, "pase_grounded": 321},
+    "prompt_tokens": {"complete_mean": 3645.71, "pase_mean": 2951.77}
+  }
+}

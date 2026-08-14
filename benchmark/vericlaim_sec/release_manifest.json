@@ -1,0 +1,125 @@
+{
+  "annotation_workbooks_included": false,
+  "attribute_cells": 25800,
+  "attributes": [
+    "brand",
+    "model",
+    "firmware_version"
+  ],
+  "endpoint_identifiers_removed": [
+    "ip_address",
+    "endpoint_port",
+    "embedded_protocol_port",
+    "hostname",
+    "url_authority",
+    "mac_address",
+    "email_address",
+    "serial_or_uuid",
+    "internal_record_id",
+    "collection_timestamp",
+    "certificate_identifier",
+    "request_query",
+    "custom_page_title"
+  ],
+  "files": [
+    {
+      "bytes": 4194244,
+      "path": "cells/broad_record_complete-000.jsonl",
+      "rows": 17431,
+      "sha256": "1bcbbc0ba592b935a89525a7f77e3ef285d62e82589c2571716236e13d602a41"
+    },
+    {
+      "bytes": 137059,
+      "path": "cells/broad_record_complete-001.jsonl",
+      "rows": 569,
+      "sha256": "3a014e9ad739a3717b7ade35be16b443f0b6ef5648dc88fc3b4edee211b63abc"
+    },
+    {
+      "bytes": 1480190,
+      "path": "cells/candidate_verification-000.jsonl",
+      "rows": 6000,
+      "sha256": "7b62054b0b038ccf03b14f6292f2b9783af0fb6e5f9abafac53928241b8ae1c1"
+    },
+    {
+      "bytes": 430502,
+      "path": "cells/evidence_rich-000.jsonl",
+      "rows": 1800,
+      "sha256": "e714c0280036a13caf3c9e078b06c6682daf3fdf8e92f85a4509e58bcce71a29"
+    },
+    {
+      "bytes": 4089485,
+      "path": "records/broad_record_complete-000.jsonl",
+      "rows": 4375,
+      "sha256": "df2687cca227db72759cb21e4454929e9e43a300f607e57150d4f71886120b99"
+    },
+    {
+      "bytes": 1249581,
+      "path": "records/broad_record_complete-001.jsonl",
+      "rows": 1625,
+      "sha256": "f05c1673c67d0118de7751df8a54a07a88f431e45be268672454ffb30c850767"
+    },
+    {
+      "bytes": 4095226,
+      "path": "records/candidate_verification-000.jsonl",
+      "rows": 761,
+      "sha256": "8cf4f6462fd1181f98f82062bafa019f0eb4bf57225171206bab568229e7671b"
+    },
+    {
+      "bytes": 3065820,
+      "path": "records/candidate_verification-001.jsonl",
+      "rows": 1239,
+      "sha256": "70aad975ac4df6263418828bdc929782e3d51e0b80b466822c5b4acb47e6c39e"
+    },
+    {
+      "bytes": 963026,
+      "path": "records/evidence_rich-000.jsonl",
+      "rows": 600,
+      "sha256": "b964a18a442c4e499719daf125cecdba3b3248bb0eaf978532424a26b4dea06a"
+    }
+  ],
+  "gold_contract": "final adjudicated INFOCOM submission gold",
+  "local_user_paths_removed": true,
+  "platform_derived_fields_included": false,
+  "query_keys_removed_version_values_preserved": true,
+  "records": 8600,
+  "released_cell_fields": [
+    "schema_version",
+    "cell_id",
+    "record_id",
+    "track",
+    "attribute",
+    "gold_values",
+    "gold_supported"
+  ],
+  "schema_version": "vericlaim-sec-v1",
+  "structured_sensitive_values_removed": true,
+  "tracks": {
+    "broad_record_complete": {
+      "cells": 18000,
+      "positive": {
+        "brand": 895,
+        "firmware_version": 279,
+        "model": 911
+      },
+      "records": 6000
+    },
+    "candidate_verification": {
+      "cells": 6000,
+      "positive": {
+        "brand": 1477,
+        "firmware_version": 681,
+        "model": 1334
+      },
+      "records": 2000
+    },
+    "evidence_rich": {
+      "cells": 1800,
+      "positive": {
+        "brand": 520,
+        "firmware_version": 376,
+        "model": 467
+      },
+      "records": 600
+    }
+  }
+}

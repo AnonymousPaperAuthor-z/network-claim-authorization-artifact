@@ -1,0 +1,3 @@
+# The standalone runtime and reproduction scripts use only Python's standard
+# library. Install the optional extras from pyproject.toml for tests or the
+# model-dependent reproduction scripts.

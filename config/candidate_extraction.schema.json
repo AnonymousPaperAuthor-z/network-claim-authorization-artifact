@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "VeriClaim candidate extraction",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["brand", "model", "firmware_version", "claims"],
+  "properties": {
+    "brand": {"type": "string"},
+    "model": {"type": "string"},
+    "firmware_version": {"type": "string"},
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["attribute", "value", "evidence_spans", "operator"],
+        "properties": {
+          "attribute": {"enum": ["brand", "model", "firmware_version"]},
+          "value": {"type": "string"},
+          "evidence_spans": {"type": "array", "items": {"type": "string"}},
+          "operator": {"enum": ["copy", "normalize", "compose"]}
+        }
+      }
+    }
+  }
+}

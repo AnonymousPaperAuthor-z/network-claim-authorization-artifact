@@ -1,0 +1,262 @@
+{
+  "annotation_workbooks_included": false,
+  "benchmark_gold_location": "benchmark/vericlaim_sec/cells/",
+  "counts": {
+    "eev_contrastive_pairs": 17,
+    "eev_train": 45114,
+    "eev_transfer": 1067,
+    "pase_units": 27292
+  },
+  "eev_stats": {
+    "eev_train": {
+      "label_source::broad_adjudication_plus_semantic_projection": 5658,
+      "label_source::pase_audited_exact_unit": 247,
+      "label_source::pase_weak_exact_unit": 39209,
+      "partition::broad_record_complete": 5658,
+      "partition::pase_exact_units": 39456,
+      "split::calibration": 7941,
+      "split::test": 5359,
+      "split::train": 31814
+    },
+    "eev_transfer": {
+      "label_source::evidence_rich_candidate_gold": 1067,
+      "partition::evidence_rich_transfer": 1067,
+      "split::transfer": 1067
+    }
+  },
+  "endpoint_identifiers_removed": true,
+  "files": [
+    {
+      "bytes": 5129,
+      "path": "eev/contrastive_pairs-000.jsonl",
+      "rows": 17,
+      "sha256": "129560784c3368f8df3a224452c63cb8508746aed069db14a215864d71480cb7"
+    },
+    {
+      "bytes": 4212861,
+      "path": "eev/train-000.jsonl",
+      "rows": 2773,
+      "sha256": "193a224a1a7307cfec7deb55654647f63d92b1d8711d44c2610fa4e523943e77"
+    },
+    {
+      "bytes": 4107780,
+      "path": "eev/train-001.jsonl",
+      "rows": 2997,
+      "sha256": "b9356bbdb3428145752fe6f52e095acf729499c1b465d7a760202143dfc5d463"
+    },
+    {
+      "bytes": 3999446,
+      "path": "eev/train-002.jsonl",
+      "rows": 1749,
+      "sha256": "a93a2c9587abe6889084e14c2c119f1b398e7cb9e31e4223fe9c2f7c4cff39b7"
+    },
+    {
+      "bytes": 3969340,
+      "path": "eev/train-003.jsonl",
+      "rows": 1761,
+      "sha256": "828d31147f6442b9046109006aaa82b2dd890f560c3468e21eecf686605a5a9c"
+    },
+    {
+      "bytes": 3954887,
+      "path": "eev/train-004.jsonl",
+      "rows": 1770,
+      "sha256": "6fbbafe07d07488722758e941f15b71c3df42717164c78f88b67ddc6d35c7db1"
+    },
+    {
+      "bytes": 4009780,
+      "path": "eev/train-005.jsonl",
+      "rows": 1787,
+      "sha256": "496c7a40b10d13ab9392a7d13103d7212122b1cfd32fd6a2c910bb06864648d9"
+    },
+    {
+      "bytes": 3977380,
+      "path": "eev/train-006.jsonl",
+      "rows": 1763,
+      "sha256": "9f083ebd16ac36195777c3684205f3d899ed1a51d8748870f108aa3fb5ef7c1f"
+    },
+    {
+      "bytes": 3976193,
+      "path": "eev/train-007.jsonl",
+      "rows": 1761,
+      "sha256": "8189ee97ab4f4c4a3463c490c74f3d165989ed56c8692112e3bea72e656171bd"
+    },
+    {
+      "bytes": 3963682,
+      "path": "eev/train-008.jsonl",
+      "rows": 1710,
+      "sha256": "593d8b607112502857398722e916d646b6fb637f00a2c3ee82db190654622064"
+    },
+    {
+      "bytes": 4008983,
+      "path": "eev/train-009.jsonl",
+      "rows": 1670,
+      "sha256": "fdd9367c3af7c08ad661866ca7c8e332b66612318161e55cd5dec166d869ceaf"
+    },
+    {
+      "bytes": 3977709,
+      "path": "eev/train-010.jsonl",
+      "rows": 1707,
+      "sha256": "211619d64101322e0285440c13deabf7ac18dbfbf922335ce5d4b747d4e66a7d"
+    },
+    {
+      "bytes": 3996181,
+      "path": "eev/train-011.jsonl",
+      "rows": 1724,
+      "sha256": "9cf62a3942d8aefd8290c8197d698aa8d88d948c7b03a9e698daa7175850c462"
+    },
+    {
+      "bytes": 3971515,
+      "path": "eev/train-012.jsonl",
+      "rows": 1715,
+      "sha256": "9d8abc8061ea023bb533553d975de842c1c01cfa8f7cb21154e86687ab88daec"
+    },
+    {
+      "bytes": 4003499,
+      "path": "eev/train-013.jsonl",
+      "rows": 1643,
+      "sha256": "8f4426882a3f216a666dc792b0d79891b1d0d5ce2d57efb87eeab41686baad53"
+    },
+    {
+      "bytes": 3945066,
+      "path": "eev/train-014.jsonl",
+      "rows": 1730,
+      "sha256": "e01dc9375f158cf9c920b96651c0900696728a41052fd1339db29c96baf82ccf"
+    },
+    {
+      "bytes": 4012952,
+      "path": "eev/train-015.jsonl",
+      "rows": 1674,
+      "sha256": "0e68b62742e31375242c7a3244e6cee6ae51cd00d899f525c6ee89172ef7162f"
+    },
+    {
+      "bytes": 4009389,
+      "path": "eev/train-016.jsonl",
+      "rows": 1700,
+      "sha256": "bb1aeee5758a0fc42f2910baaff0522f8b4544478340519ac982bfe3fc906500"
+    },
+    {
+      "bytes": 3984211,
+      "path": "eev/train-017.jsonl",
+      "rows": 1685,
+      "sha256": "bfa5434bdb5dabed9bbf7ab43bb8b1007811bb1764e4bfc93be4a1e633db79dc"
+    },
+    {
+      "bytes": 3984080,
+      "path": "eev/train-018.jsonl",
+      "rows": 1691,
+      "sha256": "53f692fc9a7866441c73dfbaba6ff02feb5d81a8d9ad36b14219c737d2ccd851"
+    },
+    {
+      "bytes": 3979207,
+      "path": "eev/train-019.jsonl",
+      "rows": 1664,
+      "sha256": "e83fac3dfc183f379ff6d1e7ea61359c9880a5e6cab21dc2e34b2c0a88da405b"
+    },
+    {
+      "bytes": 3993514,
+      "path": "eev/train-020.jsonl",
+      "rows": 1684,
+      "sha256": "4a7848235398270510f6fcfad9a8b686a7a55b7a3445e2621c33c76c5f2a58ad"
+    },
+    {
+      "bytes": 4008925,
+      "path": "eev/train-021.jsonl",
+      "rows": 1703,
+      "sha256": "5a7e1677ad0a39df018f2433858dfc19b159e715c267d6b89e5728009ef3c7e3"
+    },
+    {
+      "bytes": 3875368,
+      "path": "eev/train-022.jsonl",
+      "rows": 1986,
+      "sha256": "428af1d9660f3256d70378b26c3750c9f8a75724b393b0ddf0e3283cadb418d1"
+    },
+    {
+      "bytes": 3325466,
+      "path": "eev/train-023.jsonl",
+      "rows": 1809,
+      "sha256": "9be7ff5197dcc416ee92ebdbcc4d30e739a21bbed4170c081fb1409cfb34ba06"
+    },
+    {
+      "bytes": 2208414,
+      "path": "eev/train-024.jsonl",
+      "rows": 1258,
+      "sha256": "8e32d1195a2d3e970e307ea6ba7bc72a01459ee38cdca8d87488e1dcee2d1035"
+    },
+    {
+      "bytes": 1770228,
+      "path": "eev/transfer-000.jsonl",
+      "rows": 1067,
+      "sha256": "11b83138459a871351c4d594c167a4b6c9be40954fa6b424d9c57e6ac5c5f5f1"
+    },
+    {
+      "bytes": 3972825,
+      "path": "pase/units-000.jsonl",
+      "rows": 3245,
+      "sha256": "b1ea5850b58e9a750264bdb6c0bc1ae48da77b5950ac1529db2fb14534b2f5c6"
+    },
+    {
+      "bytes": 3971305,
+      "path": "pase/units-001.jsonl",
+      "rows": 3301,
+      "sha256": "bcffe2f49f32c4ba4639ea1aaa08e1cdfcfd89571a355970636dbca2d2034394"
+    },
+    {
+      "bytes": 3976539,
+      "path": "pase/units-002.jsonl",
+      "rows": 3182,
+      "sha256": "19369218584efd6c0be12a0dec56146bd162fbd4eb45c509b858dfb5e26deb01"
+    },
+    {
+      "bytes": 3967644,
+      "path": "pase/units-003.jsonl",
+      "rows": 3188,
+      "sha256": "7d629661079bb8f012fbe6390c9caa2940feb17dfd48246ec0b71f143ba46923"
+    },
+    {
+      "bytes": 3968584,
+      "path": "pase/units-004.jsonl",
+      "rows": 3102,
+      "sha256": "a1f83640897006771d61fb0aae03c7c01660ff44d0c250718ee41a73489329b3"
+    },
+    {
+      "bytes": 3989198,
+      "path": "pase/units-005.jsonl",
+      "rows": 3123,
+      "sha256": "403df7133ccd27b9853d93e00b4ed5b29a9ab69393b88d86073178f58a185c64"
+    },
+    {
+      "bytes": 3989945,
+      "path": "pase/units-006.jsonl",
+      "rows": 3109,
+      "sha256": "9a42c4f42245b72b571ed3931cf06ebd0bdd1daf5d9d9c295807d8d3765f99b8"
+    },
+    {
+      "bytes": 3644555,
+      "path": "pase/units-007.jsonl",
+      "rows": 3548,
+      "sha256": "eaa0bcdb3541beba9ed23bb248d667e29284eaeaa2d734a5ace126789501da02"
+    },
+    {
+      "bytes": 1273555,
+      "path": "pase/units-008.jsonl",
+      "rows": 1494,
+      "sha256": "78b3c2b855552f8bb2e452baa1aa02658c4961da3645c78aa146995e8eee7213"
+    }
+  ],
+  "gold_contract": "Only benchmark gold_values are final adjudicated gold. Training labels retain their supervision source and task masks.",
+  "local_user_paths_removed": true,
+  "pase_stats": {
+    "source_type::component_version": 1676,
+    "source_type::deep_product": 1473,
+    "source_type::device_banner": 6553,
+    "source_type::screenshot_title": 816,
+    "source_type::static_resource": 16450,
+    "source_type::target_metadata": 2000,
+    "split::test": 3486,
+    "split::train": 20672,
+    "split::validation": 4810
+  },
+  "public_training_subset": "Privacy-filtered subset; internal product-label summaries are excluded.",
+  "schema_version": "vericlaim-training-v1",
+  "structured_sensitive_values_removed": true
+}

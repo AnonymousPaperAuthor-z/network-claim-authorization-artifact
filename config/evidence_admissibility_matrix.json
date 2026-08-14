@@ -1,0 +1,80 @@
+{
+  "version": "vericlaim-evidence-authorization-v1",
+  "description": "Attribute-level source authorization used by the released VeriClaim safety contracts. Unknown evidence fails closed.",
+  "decision_semantics": {
+    "authorized": "The source can directly support the attribute when its field, subject, and risk predicates hold.",
+    "weak_authorized": "The source can support an identity attribute, but remains weaker than a device-bound banner or protocol field.",
+    "conditional": "The source requires an additional semantic contract before it can support direct acceptance.",
+    "not_authorized": "The source cannot directly establish this attribute."
+  },
+  "default_decision": {
+    "decision": "not_authorized",
+    "rule_id": "EAM-DEFAULT",
+    "reason": "Unknown source or attribute combinations are not authorized."
+  },
+  "source_types": {
+    "device_banner": {
+      "attribute_rules": {
+        "brand": {"decision": "authorized", "rule_id": "EAM-BANNER-BRAND", "reason": "A target-device banner can report its vendor.", "blocked_by": ["wrong_subject", "identity_conflict", "authenticity_risk"]},
+        "model": {"decision": "authorized", "rule_id": "EAM-BANNER-MODEL", "reason": "A target-device banner can report its product.", "blocked_by": ["wrong_subject", "identity_conflict", "authenticity_risk"]},
+        "firmware_version": {"decision": "authorized", "rule_id": "EAM-BANNER-FIRMWARE", "reason": "A target-device release field can report firmware or device software.", "blocked_by": ["wrong_subject", "component_or_server_risk", "cache_risk", "identity_conflict", "authenticity_risk"]}
+      }
+    },
+    "deep_product": {
+      "attribute_rules": {
+        "brand": {"decision": "authorized", "rule_id": "EAM-DEEP-BRAND", "reason": "A product-specific response can report its vendor.", "blocked_by": ["wrong_subject", "identity_conflict", "authenticity_risk"]},
+        "model": {"decision": "authorized", "rule_id": "EAM-DEEP-MODEL", "reason": "A product-specific response can report its product.", "blocked_by": ["wrong_subject", "identity_conflict", "authenticity_risk"]},
+        "firmware_version": {"decision": "authorized", "rule_id": "EAM-DEEP-FIRMWARE", "reason": "A product-specific release field can report firmware.", "blocked_by": ["wrong_subject", "component_or_server_risk", "cache_risk", "identity_conflict", "authenticity_risk"]}
+      }
+    },
+    "protocol_self_report": {
+      "attribute_rules": {
+        "brand": {"decision": "authorized", "rule_id": "EAM-PROTOCOL-BRAND", "reason": "A protocol field can report a target vendor only when its semantic role is vendor identity.", "blocked_by": ["wrong_subject", "generic_protocol_value", "identity_conflict", "authenticity_risk"]},
+        "model": {"decision": "authorized", "rule_id": "EAM-PROTOCOL-MODEL", "reason": "A protocol field can report a target product only when its semantic role is product identity.", "blocked_by": ["wrong_subject", "generic_protocol_value", "identity_conflict", "authenticity_risk"]},
+        "firmware_version": {"decision": "authorized", "rule_id": "EAM-PROTOCOL-FIRMWARE", "reason": "A protocol field can report firmware only when it denotes the target device release.", "blocked_by": ["wrong_subject", "generic_protocol_value", "component_or_server_risk", "cache_risk", "identity_conflict", "authenticity_risk"]}
+      }
+    },
+    "screenshot_title": {
+      "attribute_rules": {
+        "brand": {"decision": "weak_authorized", "rule_id": "EAM-TITLE-BRAND", "reason": "A device-bound title can weakly support vendor identity.", "blocked_by": ["wrong_subject", "identity_conflict"]},
+        "model": {"decision": "weak_authorized", "rule_id": "EAM-TITLE-MODEL", "reason": "A device-bound title can weakly support product identity.", "blocked_by": ["wrong_subject", "identity_conflict"]},
+        "firmware_version": {"decision": "not_authorized", "rule_id": "EAM-TITLE-FIRMWARE", "reason": "A page title alone cannot establish firmware."}
+      }
+    },
+    "static_resource": {
+      "attribute_rules": {
+        "brand": {"decision": "not_authorized", "rule_id": "EAM-STATIC-BRAND", "reason": "A static resource alone cannot establish vendor identity."},
+        "model": {"decision": "not_authorized", "rule_id": "EAM-STATIC-MODEL", "reason": "A static resource alone cannot establish product identity."},
+        "firmware_version": {"decision": "conditional", "rule_id": "EAM-STATIC-FIRMWARE", "reason": "Repeated device-bound firmware or release semantics can authorize a static-resource version; generic library and cache tokens cannot."}
+      }
+    },
+    "cache_artifact": {
+      "attribute_rules": {
+        "brand": {"decision": "not_authorized", "rule_id": "EAM-CACHE-BRAND", "reason": "A cache artifact cannot establish vendor identity."},
+        "model": {"decision": "not_authorized", "rule_id": "EAM-CACHE-MODEL", "reason": "A cache artifact cannot establish product identity."},
+        "firmware_version": {"decision": "not_authorized", "rule_id": "EAM-CACHE-FIRMWARE", "reason": "A hash, ETag, or cache token cannot establish firmware."}
+      }
+    },
+    "component_version": {
+      "attribute_rules": {
+        "brand": {"decision": "not_authorized", "rule_id": "EAM-COMPONENT-BRAND", "reason": "A component cannot establish the enclosing device vendor."},
+        "model": {"decision": "not_authorized", "rule_id": "EAM-COMPONENT-MODEL", "reason": "A component cannot establish the enclosing device product."},
+        "firmware_version": {"decision": "not_authorized", "rule_id": "EAM-COMPONENT-FIRMWARE", "reason": "A component release cannot establish device firmware."}
+      }
+    },
+    "library_version": {
+      "attribute_rules": {
+        "brand": {"decision": "not_authorized", "rule_id": "EAM-LIBRARY-BRAND", "reason": "A library cannot establish device vendor."},
+        "model": {"decision": "not_authorized", "rule_id": "EAM-LIBRARY-MODEL", "reason": "A library cannot establish device product."},
+        "firmware_version": {"decision": "not_authorized", "rule_id": "EAM-LIBRARY-FIRMWARE", "reason": "A library release cannot establish device firmware."}
+      }
+    },
+    "server_software": {
+      "attribute_rules": {
+        "brand": {"decision": "not_authorized", "rule_id": "EAM-SERVER-BRAND", "reason": "Server software cannot establish device vendor."},
+        "model": {"decision": "not_authorized", "rule_id": "EAM-SERVER-MODEL", "reason": "Server software cannot establish device product."},
+        "firmware_version": {"decision": "not_authorized", "rule_id": "EAM-SERVER-FIRMWARE", "reason": "A server release cannot establish device firmware."}
+      }
+    }
+  }
+}
